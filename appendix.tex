@@ -1,0 +1,394 @@
+\chapter{پیوست‌ها}
+در این بخش اثبات دو قضیه‌ی
+\ref{theorem:thm8}
+و 
+\ref{thm.main}
+آورده شده است. در ادامه ابتدا به اثبات قضیه‌ی
+\ref{theorem:thm8}
+می‌پردازیم و با استفاده از نتایج این قضیه، قضیه‌ی اصلی، با استفاده از استقراء اثبات شده است. 
+\section{اثبات قضیه‌ی
+\ref{theorem:thm8}}
+\label{Appndx1}
+جهت اثبات ابتدا چند لم مورد استفاده در روند اثبات بیان شده است. در ادامه با توجه به مدل سیگنال در نظر گرفته شده،‌ قضیه‌ی 
+\ref{theorem:thm7}
+به مجموعه‌ی سیگنال‌های دیکشنری تنک، گسترش یافته است.
+\begin{lemma}
+\cite[لم~8.25]{foucart2013mathematical}
+\label{lmm:slepian}
+فرض کنید 
+$\bm{x}$
+و
+$\bm{y}$
+بردار‌های تصادفی گوسی با میانگین صفر در
+$\R^{m}$
+باشند. در این صورت اگر
+\begin{align}
+\label{eq:slep1}
+\mathbb{E}\vert x_{i}-x_{j} \vert^{2} \leq \mathbb{E}\vert y_{i}-y_{j} \vert^{2} \quad \text{for all}~ i,j\in [m]
+\end{align}
+باشد، رابطه‌ی زیر برقرار است.
+\begin{align}
+\label{eq:slep2}
+\mathbb{E} \max_{j\in [m]} x_{j} \leq \mathbb{E} \max_{j\in [m]} y_{j} 
+\end{align}
+\end{lemma}
+
+لم
+\ref{lmm:slepian}
+در مراجع
+\lr{Slepian}
+نامیده می‌شود.
+
+\begin{lemma}
+\label{lmm:SparsW}
+\cite[لم~2.3]{plan2013robust}
+(عرض میانگین مجموعه‌ی سیگنال‌های 
+$s$-تنک)
+عرض میانگین مجموعه‌ی
+\begin{align}
+\label{eq:SparsW1}
+S_{n,s} := \lbrace \bm{x} \in \R^{n}~:~\norm{\bm{x}}_{0}\leq s,~\norm{\bm{x}}_{2}\leq 1\rbrace
+\end{align}
+در رابطه‌ی زیر صدق می‌کند.
+\begin{align}
+\label{eq:SparsW2}
+cs \log\left(2n/s\right)\leq \mathit{w}^{2}\left(S_{n,s}\right)\leq Cs \log\left(2n/s\right)
+\end{align}
+\end{lemma}	
+
+همانگونه که در متن اشاره گردید، جهت اثبات نتایج در حالت وفقی (با آستانه‌های غیر صفر) از نتایج حسگری فشرده‌ی تک بیتی سنتی (آستانه‌ی صفر) استفاده شده است. لم 
+\ref{lmm:Dpluse}
+بیانگر ارتباط بردار‌ها در بعد
+$n$
+و
+$n+1$
+است.
+\begin{lemma}
+\label{lmm:Dpluse}
+برای دو بردار
+$\tilde{\bm{f}},\tilde{\bm{g}}\in \R^{n+1}$
+که به صورت 
+\begin{align}
+\label{eq:Dpluse1}
+	\tilde{\bm{f}} :=
+	\begin{bmatrix}
+	\begin{array}{c}
+	\bm{f}_{[n]} \\
+	\hline
+	f_{n+1}
+	\end{array}
+	\end{bmatrix}
+	\quad
+	\tilde{\bm{g}} :=
+	\begin{bmatrix}
+	\begin{array}{c}
+	\bm{g}_{[n]} \\
+	\hline
+	g_{n+1}
+	\end{array}
+	\end{bmatrix}	
+\end{align}
+تشکیل شده است و در آن
+$f_{n+1},g_{n+1}\neq 0$
+است، داریم	
+\begin{align}
+\label{eq:Dpluse2}
+\norm{\dfrac{\bm{f}_{[n]}}{f_{n+1}}-\dfrac{\bm{g}_{[n]}}{g_{n+1}}}_{2} \leq 	\dfrac{\|\tilde{\bm{f}}\|_{2}\|\tilde{\bm{g}}\|_{2}}{\vert f_{n+1}\vert \vert g_{n+1}\vert} \norm{\dfrac{\tilde{\bm{f}}}{\|\tilde{\bm{f}}\|_{2}}-\dfrac{\tilde{\bm{g}}}{\|\tilde{\bm{g}}\|_{2}}}_{2}.
+\end{align}
+\end{lemma}
+\begin{proof}
+جهت اثبات رابطه‌ی فوق از نامساوی مثلثی در
+$\R^{n}$
+و نامساوی کوشی-شوارتز در 
+$\R^{2}$
+استفاده شده است. 
+\begin{align*}
+\norm{\dfrac{\bm{f}_{[n]}}{f_{n+1}}-\dfrac{\bm{g}_{[n]}}{g_{n+1}}}_{2} =& \|\tilde{\bm{f}}\|_{2} \norm{\dfrac{1/f_{n+1}}{\|\tilde{\bm{f}}\|_{2}}\bm{f}_{[n]} - \dfrac{1/g_{n+1}}{\|\tilde{\bm{f}}\|_{2}}\bm{g}_{[n]}  }_{2} \\ 
+\end{align*}
+با استفاده از نامساوی مثلثی داریم
+\begin{align*}
+\norm{\dfrac{\bm{f}_{[n]}}{f_{n+1}}-\dfrac{\bm{g}_{[n]}}{g_{n+1}}}_{2} \leq & \|\tilde{\bm{f}}\|_{2} \left( \dfrac{1}{f_{n+1}} \norm{\dfrac{\tilde{\bm{f}}_{[n]}}{\|\tilde{\bm{f}}\|_{2}} -\dfrac{\tilde{\bm{g}}_{[n]}}{\|\tilde{\bm{g}}\|_{2}} }_{2} + \left| \dfrac{1/g_{n+1}}{\|\tilde{\bm{f}}\|_{2}}- \dfrac{1/f_{n+1}}{\|\tilde{\bm{g}}\|_{2}}\right| \norm{\bm{g}_{[n]}}_{2} \right) \\
+=& \|\tilde{\bm{f}}\|_{2} \left( \dfrac{1}{f_{n+1}} \norm{\dfrac{\tilde{\bm{f}}_{[n]}}{\|\tilde{\bm{f}}\|_{2}} -\dfrac{\tilde{\bm{g}}_{[n]}}{\|\tilde{\bm{g}}\|_{2}} }_{2} + \dfrac{\norm{\bm{g}_{[n]}}_{2}}{\vert f_{n+1} \vert \vert g_{n+1} \vert} 
+\left| \dfrac{f_{n+1}}{\|\tilde{\bm{f}}\|_{2}}- \dfrac{g_{n+1}}{\|\tilde{\bm{g}}\|_{2}}\right| \right) \\
+\end{align*}
+با بکار بردن نامساوی کوشی-شوارتز داریم	
+\begin{align*}
+\norm{\dfrac{\bm{f}_{[n]}}{f_{n+1}}-\dfrac{\bm{g}_{[n]}}{g_{n+1}}}_{2} \leq & \|\tilde{\bm{f}}\|_{2}  \left[ \dfrac{1}{\vert f_{n+1} \vert^{2}} + \dfrac{\norm{\bm{g}_{[n]}}_{2}^{2} }{ \vert f_{n+1} \vert^{2} \vert g_{n+1} \vert^{2}} \right]^{1/2} \\ 
+&\left[ \norm{\dfrac{\bm{f}_{[n]}}{\|\tilde{\bm{f}}\|_{2}} -\dfrac{\bm{g}_{[n]}}{\|\tilde{\bm{g}}\|_{2}} }_{2}^{2} 
++ \left| \dfrac{f_{n+1}}{\|\tilde{\bm{f}}\|_{2}} -\dfrac{g_{n+1}}{\|\tilde{\bm{g}}\|_{2}} \right|^{2}
+\right]^{1/2}\\
+=& \|\tilde{\bm{f}}\|_{2} \left[ \dfrac{\norm{\tilde{\bm{g}}}_{2}^{2} }{ \vert f_{n+1} \vert^{2} \vert g_{n+1} \vert^{2}} \right]^{1/2} \norm{\dfrac{\tilde{\bm{f}}}{\|\tilde{\bm{f}}\|_{2}} - \dfrac{\tilde{\bm{g}}}{\norm{\tilde{\bm{g}}}_{2}}}_{2}
+\end{align*}
+با مرتب نمودن عبارت آخر  سمت راست معادله‌ی
+\eqref{eq:Dpluse2}
+به دست می‌آید.
+\end{proof}
+
+
+\begin{lemma}
+\label{lmm:PreImW}
+مجموعه‌ی سیگنال‌های 
+$\ell_2$
+نرمالیزه‌ی 
+$s$-تنک
+تحلیلی موثر در شرط زیر صدق می‌کنند.
+\begin{align}
+\label{eq:PreImW1}
+\mathit{w}\left(\left(\mathbf{D}^{\ast}\right)^{-1}\left(\Sigma_{s}^{N,\text{eff}}\right)\cap S^{n-1} \right)\leq C \sqrt{s \log\left(N/s\right)}
+\end{align}
+\end{lemma}
+
+
+\begin{proof}
+با استفاده از تعریف عرض گوسی برای
+$ \mathcal{K}_{s}:= \left(\mathbf{D}^{\ast}\right)^{-1}\left(\Sigma_{s}^{N,\text{eff}}\right)\cap S^{n-1} $
+که در آن 
+$ \bm{g}\in \R^{n} $
+نشان‌دهنده‌ی  بردار تصادفی نرمال استاندارد است، داریم:
+\begin{align*}
+\mathit{w}\left(\mathcal{K}_{s}\right)= \mathbb{E}\left[\sup_{\substack{\bm{D}^{\ast}\bm{f}\in \Sigma_{s}^{N,\text{eff}}\\ \|\bm{f}\|_2=1}} \langle\bm{f},\bm{g}\rangle \right] 
+=& \mathbb{E}\left[\sup_{\substack{\bm{D}^{\ast}\bm{f}\in \Sigma_{s}^{N,\text{eff}}\\ \|\bm{D}^{\ast}\bm{f}\|_2=1}} \langle\bm{D}\bm{D}^{\ast}\bm{f},\bm{g}\rangle \right] \\
+\leq & \mathbb{E}\left[\sup_{\substack{\bm{x}\in \Sigma_{s}^{N,\text{eff}}\\ \|\bm{x}\|_2=1}} \langle\bm{D}\bm{x},\bm{g}\rangle \right] 
+\end{align*}
+با توجه به اینکه فرض نمودیم که 
+$\bm{D}$
+از چارچوب فشرده برخوردار باشد
+\eqref{eq:eq27}، 
+$ \|\bm{D}\|_{2\rightarrow 2} = 1 $
+است. همچنین برای هر 
+$ \bm{x},\bm{x}^{\prime}\in \Sigma^{N,\text{eff}}_{s} \cap S^{n-1} $
+داریم:
+\begin{align*}
+\mathbb{E}\left[ \langle\bm{D}\bm{x},\bm{g}\rangle - \langle\bm{D}\bm{x}^{\prime},\bm{g}^{\prime}\rangle \right]^{2} =& \mathbb{E}\left[ \langle \bm{Dx},\bm{g} \rangle^{2} \right]+\mathbb{E}\left[ \langle \bm{D}\bm{x}^{\prime},\bm{g}^{\prime} \rangle^{2} \right] \\
+=& \|\bm{D}\bm{x}\|_{2}^{2}+\|\bm{D}\bm{x}^{\prime}\|_{2}^{2} 
+\leq \|\bm{x}\|^{2}_{2}+\|\bm{x}^{\prime}\|^{2}_{2}\\
+=& \mathbb{E}\left[ \langle\bm{x},\bm{g}\rangle - \langle\bm{x}^{\prime},\bm{g}^{\prime}\rangle \right]^{2} 
+\end{align*} 
+در ادامه با اعمال لم
+\eqref{lmm:slepian}
+داریم:
+\begin{align}
+\label{eq:PreImW2}
+w\left(\mathcal{K}_{s}\right) \leq  \mathbb{E}\left[\sup_{\substack{\bm{x}\in \Sigma_{s}^{N,\text{eff}}\\ \|\bm{x}\|_2=1}} \langle\bm{x},\bm{g}\rangle \right] =  w \left( \Sigma^{N,\text{eff}}_{s}\cap S^{n-1}\right)
+\end{align}
+
+مقدار عبارت فوق با استفاده از کران بالای محاسبه شده در لم
+\eqref{lmm:SparsW}
+به صورت زیر به دست می‌آید.
+\begin{align}
+ w \left( \Sigma^{N,\text{eff}}_{s}\cap S^{n-1}\right) \leq c \sqrt{s \log\left(N/s\right)}
+\end{align}
+
+\end{proof}
+
+در قضیه‌ی بعدی تعداد نمونه‌های لازم جهت برش‌کاری یک مجموعه‌ی دیکشنری تنک محاسبه شده است.
+
+\begin{theorem}[برشکاری مجموعه‌ی دیکشنری تنک]
+\label{thm:D-TES}
+فرض کنید 
+$\epsilon>0$
+، 
+$m\geq C\epsilon^{-6} s \log\left(N/s\right)$
+و 
+$\bm{A}$
+ماتریس نمونه‌برداری با درایه‌های تصادفی نرمال استاندارد باشد. آنگاه، با احتمال 
+\begin{align}
+1- \exp(-c\epsilon^{2}m),
+\end{align}
+ سطرهای 
+$\bm{A}$
+مجموعه‌ی
+$\mathcal{K} = \left(\bm{D}^{\ast}\right)^{-1}\left( \Sigma_{s}^{N,\text{eff}} \right)\cap S^{n-1}$
+را 
+\lr{$\epsilon$-tessellate}
+می‌کند. به عبارت دیگر
+\begin{align*}
+\label{eq:D-TES1}
+\left[ \bm{f},\bm{g}\in \mathcal{K} ~:~	\text{sign}\langle\mathbf{a}_{i},\mathbf{f}\rangle = \text{sign}\langle\mathbf{a}_{i},\mathbf{g}\rangle ,~ i=1,\cdots ,m\right] 
+ \Rightarrow \|\mathbf{f}-\mathbf{g}\|_{2}\leq \epsilon 
+\end{align*}
+\end{theorem}
+\begin{proof}
+با استفاده از نتایج 
+\ref{theorem:thm7}
+با فرض
+$\mathcal{K} = \left(\bm{D}^{\ast}\right)^{-1}\left( \Sigma_{s}^{N,\text{eff}} \right)\cap S^{n-1}$
+نتیجه به ازای 
+\begin{align}
+m\geq C \epsilon^{-6} w(\mathcal{K})^{2}
+\end{align}
+برقرار است.
+با استفاده از لم
+\ref{lmm:PreImW}
+مقدار کران خطا به دست می‌آید.
+\end{proof}
+
+پس از بیان مقدمات لازم، می‌توان کران بیان شده برای بازیابی تک مرحله‌ای را اثبات نمود.
+
+\begin{proof}[اثبات قضیه‌ی \ref{theorem:thm8}]
+جهت اثبات، سیگنال‌های انتقال‌یافته را به صورت زیر تعریف می‌کنیم.
+
+\begin{align}
+\tilde{\bm{f}} :=
+\begin{bmatrix}
+\begin{array}{c}
+\bm{f} \\
+\hline
+\sigma
+\end{array}
+\end{bmatrix}
+\quad
+\tilde{\bm{D}} :=
+\begin{bmatrix}
+\begin{array}{c|c}
+\bm{D} & \bm{0}\\
+\hline
+\bm{0} & \bm{1}
+\end{array}
+\end{bmatrix}
+\quad
+\tilde{\bm{A}} :=
+\begin{bmatrix}
+\begin{array}{c|c}
+\bm{A}& 
+\begin{array}{c}
+-\tau_{1}/\sigma \\ \vdots \\-\tau_{m}/\sigma
+\end{array}
+\end{array}
+\end{bmatrix}
+\end{align}
+علاوه بر این،
+$f_{\varDelta}$
+پاسخ مساله‌ی بهینه‌سازی
+\eqref{eq:SSR}
+و نسخه‌ی انتقال‌یافته‌ی آن را به صورت
+$ \tilde{\bm{g}}=\begin{bmatrix}
+\begin{array}{c}
+\bm{f}_{\varDelta} \\
+\hline
+\sigma
+\end{array}
+\end{bmatrix} $	
+تعریف می‌کنیم. با توجه به 
+\begin{align*}
+\|\tilde{\bm{D}}^{\ast} \tilde{\bm{g}}\|_{1} = \norm{
+\begin{bmatrix}
+\begin{array}{c}
+\tilde{\bm{D}}^{\ast}\bm{f}_{\varDelta} \\
+\hline
+\sigma
+\end{array}
+\end{bmatrix} 	
+}_{1} =& \|\tilde{\bm{D}}^{\ast}\bm{f}_{\varDelta}\|_{1}+\sigma 
+\leq \|\tilde{\bm{D}}^{\ast}\bm{f}\|_{1}+\sigma \leq \sqrt{s}r+\sigma \\
+\leq & \sqrt{r^2+\sigma^2}\sqrt{s+1}
+\end{align*}
+و
+$ \|\tilde{\bm{D}}^{\ast} \tilde{\bm{g}}\|_{2} = \|\tilde{\bm{g}} \|_{2}= \sqrt{\|\tilde{\bm{f}}_{\varDelta}\|_{2}^{2}+\sigma^2} \geq \sigma$
+دو سیگنال
+$ \tilde{\bm{f}},\tilde{\bm{g}} $
+به ازای
+$ s^{\prime}:= (r^2/\sigma^2 +1)(s+1) $، 
+$s^{\prime}$-تنک
+تحلیلی است.
+اگر به تعداد
+$ m \geq C {\epsilon^{\prime}}^{-6} s^{\prime} \log{(N/s^{\prime})}$
+نمونه به صورت
+\begin{align}
+\text{sign}(\tilde{\bm{A}}\tilde{\bm{f}})=\text{sign}(\tilde{\bm{A}}\tilde{\bm{g}})=\bm{y} 
+\end{align}
+دریافت کنیم. با اعمال قضیه‌ی
+\ref{thm:D-TES}
+بر سیگنال‌های
+$ \tilde{\bm{f}}/\|\tilde{\bm{f}}\|_{2} $ 
+و
+$ \tilde{\bm{g}}/\|\tilde{\bm{g}}\|_{2} $ 
+با احتمال شکست حداکثر
+$ \gamma \exp{(-cm{\epsilon^{\prime}}^{2})} \leq \gamma \exp{(-c^{\prime}m\epsilon^{2}r^2\sigma^2/(r^2+\sigma^2)^{2} )} $
+داریم:
+\begin{align}
+\norm{\dfrac{\tilde{\bm{f}}}{\|\tilde{\bm{f}}\|_{2}}-\dfrac{\tilde{\bm{g}}}{\|\tilde{\bm{g}}\|_{2}}}\leq \epsilon^{\prime}
+\end{align}
+با استفاده از نتیجه‌ی لم
+\ref{lmm:Dpluse}
+رابطه‌ی زیر به دست می‌آید.
+\begin{align}
+\norm{\dfrac{\bm{f}}{\sigma}-\dfrac{\bm{f}_{\varDelta}}{\sigma}}_{2}\leq \dfrac{r^2+\sigma^{2}}{\sigma^{2}} \epsilon^{\prime}, \\
+ \|\bm{f}-\bm{f}_{\varDelta}\|_{2}\leq r\epsilon
+\end{align}
+\end{proof}
+
+
+\section{اثبات قضیه‌ی 
+\ref{thm.main}}
+\label{Appndx2}
+
+\begin{proof}[اثبات قضیه‌ی \ref{thm.main}]
+با فرض سیگنال
+$ \bm{f}\in (\bm{D}^{\ast})^{-1} \Sigma_{s}^{N,\text{eff}} $ 
+و با استفاده از استقراء ثابت می‌کنیم که رابطه‌ی
+\begin{align}
+\|\bm{f}-\bm{f}_{t}\|_{2}\leq  r 2^{1-t},
+\end{align}
+برای 
+$t \in [L]$
+برقرار است.
+حکم برای 
+$t=1$
+برقرار است ( مرحله‌ی اول معادل با بازیابی تک مرحله‌ای است). فرض می‌کنیم که حکم به ازای
+$t-1$
+برقرار باشد و ثابت خواهیم نمود که به ازای 
+$t$
+نیز برقرار است. در مرحله‌ی
+$t-1$
+ داریم:
+
+\begin{align}
+\label{eq:fn1}
+\|\bm{f}-\bm{f}_{t-1}\|_{2}\leq  r 2^{2-t},
+\end{align}
+و همچنین
+\begin{align}
+\label{eq:fn2}
+\|\bm{D}^{\ast}(\bm{f}-\bm{f}_{t-1})\|_{1} \leq  \sqrt{s} \|\bm{f}-\bm{f}_{t-1}\|_{2} \leq \sqrt{s} r 2^{1-t}
+\end{align}
+سیگنالهای
+$\bm{f}-\bm{f}_{t-1}$
+و
+$f_{\varDelta}$
+در مجموعه‌ی شدنی مساله‌ی بهینه‌سازی بازیابی تک‌مرحله‌ای قرار دارد و در قیود مساله‌ی بهینه‌سازی صدق می‌کنند.
+با در نظر گرفتن دو رابطه‌ی 
+\eqref{eq:fn1}
+و
+\eqref{eq:fn2}
+می‌توان نوشت:
+\begin{align}
+\label{eq:fn3}
+\|\bm{f}-\bm{f}_{t}\|_{2} \leq \|\bm{f}-\bm{f}_{t-1}-f_{\varDelta}\|_{2} \leq \epsilon  r 2^{2-t}
+\end{align}
+در این حالت به ازای
+\begin{align}
+\label{eq:fn4}
+\epsilon = 1/2
+\end{align}
+ با توجه به قضیه‌ی
+\ref{theorem:thm8}
+با اخذ
+\begin{align}
+m \geq C(r/\sigma+\sigma/r)^{6}(r^{2}/\sigma^{2}+1)(1/2)^{-6} s \log(N/s)
+\end{align}
+نمونه، با احتمال حداقل
+\begin{align}
+1-\gamma \exp((-c^{\prime} b (1/2)^{2} r^{2}\sigma^{2})/(r^{2}+\sigma^{2})^{2})
+\end{align}
+داریم
+\begin{align}
+\label{eq:eqL}
+\| \bm{f}-\bm{f}_{t}\|_{2} \leq (1/2) r 2^{2-t}=  r 2^{1-t}
+\end{align}
+عبارت 
+\eqref{eq:eqL}
+برابر با حکم در مرحله‌ی
+$t$ام
+است. 
+\end{proof}

@@ -1,0 +1,153 @@
+% !TEX TS-program = XeLaTeX
+% Commands for running this example:
+% 	 xelatex Vahid-Proposal
+% 	 xelatex Vahid-Proposal
+% End of Commands
+
+%%%  نمونه یک پروپوزال کارشناسی ارشد
+
+% توجه داشته باشید برای دیدن خروجی کامل شامل نمایه و فهرست مطالب در ویرایشگر Texmaker، ابتدا دو بار 
+% کلید F1 و بعد کلید F12 و دوباره کلید F1 و در آخر کلید F7 را فشار دهید.
+%توضیحات مربوط به هر بسته یا دستور را می‌توانید در خط بالای آن ببینید.
+
+\documentclass[12pt,a4paper,oneside]{book}
+\usepackage[top=40mm, bottom=40mm, left=25mm, right=35mm]{geometry}
+\usepackage{fancyhdr}
+%در ورژن جدید زی‌پرشین برای تایپ متن‌های ریاضی، این سه بسته، حتماً باید فراخوانی شود
+\usepackage{amsthm,amssymb}
+\usepackage[table]{xcolor}% http://ctan.org/pkg/xcolor
+\usepackage{float}
+%دستوری برای وارد کردن واژه‌نامه انگلیسی به فارسی
+\newcommand\persiangloss[2]{#1\dotfill\lr{#2}\\}
+%بسته‌ای برای تنطیم حاشیه‌های بالا، پایین، چپ و راست صفحه
+%\usepackage[top=50mm, bottom=50mm, left=50mm, right=50mm]{geometry}
+%بسته‌ای برای نمایش تصاویر قرار داده شده در متن
+\usepackage{graphicx}
+\usepackage{standalone}
+\usepackage{tikz}
+\usetikzlibrary{shapes,arrows}
+\usepackage[ruled]{algorithm}
+\usepackage{algorithmic}
+\usepackage{pgfplots}
+\pgfplotsset{compat=newest}
+\usepackage{standalone}
+\usepackage{caption}
+\usepackage{subcaption}
+% بسته‌ و دستوراتی برای ایجاد لینک‌های رنگی با امکان جهش
+\usepackage[pagebackref=false,colorlinks,linkcolor=blue,citecolor=blue]{hyperref}
+% چنانچه قصد پرینت گرفتن نوشته خود را دارید، خط بالا را غیرفعال و  از دستور زیر استفاده کنید چون در صورت استفاده از دستور زیر‌‌، 
+% لینک‌ها به رنگ سیاه ظاهر خواهند شد و برای پرینت گرفتن، مناسب‌تر خواهد بود
+%\usepackage[pagebackref=false]{hyperref}
+%بسته‌ای برای ظاهر شدن «مراجع» و «نمایه» در فهرست مطالب
+\usepackage{tocbibind}
+\usepackage{notoccite}
+%دستورات زیر جهت هماهنگ شده با قالب دانشگاه علم و صنعت اضافه شده است.
+\usepackage[fleqn]{amsmath}
+\usepackage{titlesec}
+%%%%%%%%%%%%%%
+%فراخوانی بسته زی‌پرشین و دستورات مربوط به نوع فونت‌ها
+\usepackage{xepersian}
+\settextfont[Scale=1.16]{XB Niloofar}
+% از revision 118 زی‌پرشین به بعد، وارد کردن دستور زیر لازم نیست. توجه داشته باشید که در صورت  غیرفعال کردن این دستور،
+% از فونت پیش‌فرض لاتک برای کلمات انگلیسی استفاده خواهد شد.
+%\setlatintextfont[ExternalLocation,BoldFont={lmroman10-bold},BoldItalicFont={lmroman10-bolditalic},ItalicFont={lmroman10-italic}]{lmroman10-regular}
+% چنانچه می‌خواهید که اعداد در فرمول‌ها، فارسی باشد، دستور زیر را فعال کنید
+%\setdigitfont{XB Zar}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% تعریف قلم‌های فارسی و انگلیسی برای استفاده در بعضی از قسمت‌های متن
+\defpersianfont\titr[Scale=1]{XB Titre}
+\defpersianfont\nastaliq[Scale=1.5]{XB Niloofar}
+%\defpersianfont\traffic[Scale=1]{B Traffic}
+%\defpersianfont\yekan[Scale=1]{B Yekan}
+%اگر فونت‌های بالا را ندارید، دو خط بالا را غیر فعال و دو خط زیر را فعال کنید
+\defpersianfont\traffic[Scale=1]{XB Roya}
+\defpersianfont\yekan[Scale=1]{XB Kayhan}
+%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%
+\DefaultMathsDigits
+\newcommand{\norm}[1]{\left\lVert#1\right\rVert}
+
+
+\theoremstyle{definition}
+\newtheorem{definition}{تعریف}
+\newtheorem{theorem}{قضیه}
+\newtheorem{lemma}{لم}
+\newtheorem{proposition}{گزاره}
+\newtheorem{corollary}{نتیجه}
+\newtheorem{remark}{ملاحظه}
+\theoremstyle{definition}
+\newtheorem{example}{مثال}
+%%%%%%%%%%%%%%%%%%
+
+
+\pagestyle{fancy}
+\fancyhf{}
+
+\fancyhead[LE,LO]{\nouppercase{\leftmark}}
+\fancyfoot[C]{\thepage}
+
+\renewcommand\headrulewidth{1.5pt}
+\makeatletter
+\def\headrule{{\if@fancyplain\let\headrulewidth\plainheadrulewidth\fi
+\hrule\@height\headrulewidth\@width\headwidth
+\vskip 2pt% 2pt between lines
+\hrule\@height.5pt\@width\headwidth% lower line with .5pt line width
+\vskip-\headrulewidth
+\vskip-1.5pt}}
+\makeatother
+
+%%%%%%%%%%%%%%%%%%
+\SepMark{-}
+%%%%%%%%%
+ \titleformat{\chapter}[display]
+{\vspace{-3cm}\vfill\filcenter}
+{{%
+   \vspace{-3cm}\filcenter\fontsize{48pt}{48pt}\selectfont{\chaptername}
+   \fontsize{48pt}{48pt}\selectfont\thechapter%
+ }%
+}
+{50pt}
+{\fontsize{30pt}{30pt}\selectfont%
+}[\vfill\clearpage]
+\titlespacing*{\chapter}{0pt}{0pt}{0pt}
+%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%% HB %%%%%%%%%%%%%%%%
+\usepackage{bm}
+\usepackage[font=scriptsize,labelfont=bf]{caption}
+\usepackage{perpage}
+ \MakePerPage{footnote}
+%%%%%%%%%%%%%% HB %%%%%%%%%%%%%%%%
+\def\C{ \mathbb{C}}
+\def\R{\mathbb{R}}
+\def\Z{ \mathbb{Z}}
+\def\N{ \mathbb{N}}
+
+%%%%%%%%%%%%%%%%
+
+\begin{document}
+\include{FirstPage}
+\pagenumbering{harfi}
+%دستوری برای ظاهر شدن فهرست مطالب
+\tableofcontents
+\newpage
+\listoffigures
+
+\baselineskip=1.2cm
+\newpage 
+\include{Abstract}
+\pagenumbering{arabic}
+\include{chapter1}
+\include{chapter2}
+\include{chapter3}
+\include{chapter4}
+
+\appendix
+\include{appendix}
+%دستوراتی برای به حالت عادی در آمدن اندازه فونت‌ها و فاصله بین خطوط
+\normalsize
+%ایجاد «مراجع»
+\bibliographystyle{ieeetr-fa}
+\bibliography{HBReference}
+
+\include{LastPage}
+\end{document} 
