@@ -25,19 +25,19 @@
 \begin{figure}[t]
 	\centering
 	\begin{subfigure}{0.3\textwidth} % width of left subfigure
-		\includegraphics[scale=0.2]{Images/aaa.jpg}
+		\includegraphics[scale=0.2]{Images/fig12.png}
 		\caption{تغذیه سری} % subcaption
 		\label{fig12}
 	\end{subfigure}
 	\vspace{1em} % here you can insert horizontal or vertical space
 	\begin{subfigure}{0.3\textwidth} % width of right subfigure
-		\includegraphics[scale=0.2]{Images/aaa.jpg}
+		\includegraphics[scale=0.2]{Images/fig13.png}
 		\caption{تغذیه موازی} % subcaption
 		\label{fig13}
 	\end{subfigure}
 		\vspace{1em} % here you can insert horizontal or vertical space
 	\begin{subfigure}{0.3\textwidth} % width of right subfigure
-		\includegraphics[scale=0.2]{Images/aaa.jpg}
+		\includegraphics[scale=0.2]{Images/fig14.png}
 		\caption{تغذیه سری موازی} % subcaption
 		\label{fig14}
 	\end{subfigure}
@@ -55,7 +55,7 @@ $ 2^n$
 
 \begin{figure}
 	\centering
-	\includegraphics[scale=0.3]{Images/aaa.jpg}
+	\includegraphics[scale=0.3]{Images/fig15.png}
 	\caption{خطوط باریک شونده}
 	\label{fig15}
 \end{figure}
@@ -63,7 +63,7 @@ $ 2^n$
 به علاوه میتوان با مبدل های امپدانس ربع طول موج هم این کار را انجام داد:
 \begin{figure}
 	\centering
-	\includegraphics[scale=0.3]{Images/aaa.jpg}
+	\includegraphics[scale=0.4]{Images/fig16.png}
 	\caption{مبدل یک چهارم طول موج}
 	\label{fig16}
 \end{figure}
@@ -124,7 +124,7 @@ $ y$
  
 \begin{figure}
 	\centering
-	\includegraphics[scale=1]{Images/fig17.jpg}
+	\includegraphics[scale=1.5]{Images/fig17.jpg}
 	\caption{قرار گیری پچ ها در راستای 
 		$x$ 
 		و 
@@ -138,7 +138,7 @@ $ y$
 
 \begin{figure}
 	\centering
-	\includegraphics[scale=1]{Images/fig18.jpg}
+	\includegraphics[scale=1.5]{Images/fig18.jpg}
 	\caption{آرایش صفحه های E و H آنتن های مایکرواستریپ}
 	\label{fig18}
 \end{figure}
@@ -226,17 +226,108 @@ $\exp{-\lambda_{p}/\rho^{\dfrac{1}{2}}}$)
 
 
 
+از آنجا که این مقاله پایه ی پروژه ی ماست ، عینا همین مقاله را در نرم افزار HFSS شبیه سازی کردم و نتایج به در شکل های 
+\ref{fig20}
+،
+\ref{fig21}
+،
+\ref{fig22}
+و
+\ref{fig23}
+نشان داده شده است.
+
+ 
+
+\begin{figure}
+	\includegraphics[scale=0.5]{Images/fig20.jpg}
+	\caption{قرار گیری پچ ها در آرایش H-plain}
+	\label{fig20}
+\end{figure}
+\begin{figure}
+	\includegraphics[scale=0.5]{Images/fig21.jpg}
+	\caption{نمودار \lr{Return loss} در آرایش H-plain }
+	\label{fig21}
+\end{figure}
+
+\begin{figure}
+	\includegraphics[scale=0.5]{Images/fig22.jpg}
+	\caption{قرار گیری پچ ها در آرایش E-plain}
+	\label{fig22}
+\end{figure}
+\begin{figure}
+	\includegraphics[scale=0.5]{Images/fig23.jpg}
+	\caption{نمودار \lr{Return loss} در آرایش E-plain }
+	\label{fig23}
+\end{figure}
+
+\begin{figure}
+	\centering
+	\begin{subfigure}{0.4\textwidth} % width of left subfigure
+		\includegraphics[scale=0.2]{Images/H-plane.png}
+		\caption{H-plane} % subcaption
+		\label{fig24}
+	\end{subfigure}
+	\vspace{1em} % here you can insert horizontal or vertical space
+	\begin{subfigure}{0.4\textwidth} % width of right subfigure
+		\includegraphics[scale=0.2]{Images/E-plane.png}
+		\caption{E-plane} % subcaption
+		\label{fig25}
+	\end{subfigure}
+	\caption{نمودار مقایسه ی تزویج متقابل مقاله ی کارور و شبیه سازی HFSS در آرایش های E-Plain و H-Plain }
+\end{figure}
 
 
+در نتیجه با تقریب مناسبی ثابت شد که با افزایش فاصله در هر دو آرایش E و H ، مقدار تزویج متقابل کاهش میابد.
 
-
-
-
-
-
-
-
-
+\section{راه های کاهش تزویج متقابل}
+برای کاهش پدیدهٔ تزویج متقابل میان المان‌های آرایه‌های آنتنی، روش‌های متعددی وجود دارد. انتخاب روش مناسب وابسته به محدودیت‌های طراحی (ابعاد، باند فرکانسی، بهره، پیچیدگی ساخت) است. مهم‌ترین روش ها عبارت‌اند از:
+\begin{enumerate}
+	\item{
+	افزایش فاصله بین المان‌ها
+	\begin{itemize}
+		\item{
+		مزایا:
+		 ساده‌ترین و مؤثرترین راه برای کاهش کوپلینگ، بدون نیاز به تغییرات پیچیده در ساختار.
+		}
+		\item{
+		معایب:
+		 موجب افزایش ابعاد کلی آرایه می‌شود و در کاربردهایی که فضای محدود دارند (مانند آنتن‌های ماهواره‌ای یا سیستم‌های 5G فشرده) مناسب نیست.
+		}
+	\end{itemize}
+	}
+	\item{
+	استفاده از ساختارهای زمین ایزوله
+	\LTRfootnote{Isolation Structures}
+	\begin{itemize}
+		\item{
+			مزایا:
+			 کاهش مسیر جریان سطحی و بهبود ایزولاسیون بین عناصر، پیاده‌سازی نسبتاً ساده با شیار یا شکاف در گراند.
+		}
+		\item{
+			معایب:
+			می‌تواند باعث تغییر در مشخصات امپدانسی یا کاهش بهره شود و طراحی دقیق هندسه ضروری است.
+		}
+	\end{itemize}
+	}
+	\item{
+	به‌کارگیری متامواد یا ساختارهای دوره‌ای
+	\LTRfootnote{EBG/Metasurface}
+	\begin{itemize}
+		\item{
+			مزایا:
+			کاهش مسیر جریان سطحی و بهبود ایزولاسیون بین عناصر، پیاده‌سازی نسبتاً ساده با شیار یا شکاف در گراند.
+		}
+		\item{
+			معایب:
+			می‌تواند باعث تغییر در مشخصات امپدانسی یا کاهش بهره شود و طراحی دقیق هندسه ضروری است.
+		}
+	\end{itemize}
+}
+	
+	
+	
+	
+\end{enumerate}
 
 
 
