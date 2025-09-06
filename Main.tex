@@ -46,8 +46,9 @@
 \usepackage{titlesec}
 %%%%%%%%%%%%%%
 %فراخوانی بسته زی‌پرشین و دستورات مربوط به نوع فونت‌ها
+\usepackage{fontspec}
 \usepackage{xepersian}
-\settextfont[Scale=1.16]{XB Niloofar}
+\settextfont[Path = ./fonts/,Scale=1]{XB Niloofar}
 % از revision 118 زی‌پرشین به بعد، وارد کردن دستور زیر لازم نیست. توجه داشته باشید که در صورت  غیرفعال کردن این دستور،
 % از فونت پیش‌فرض لاتک برای کلمات انگلیسی استفاده خواهد شد.
 %\setlatintextfont[ExternalLocation,BoldFont={lmroman10-bold},BoldItalicFont={lmroman10-bolditalic},ItalicFont={lmroman10-italic}]{lmroman10-regular}
@@ -55,16 +56,16 @@
 %\setdigitfont{XB Zar}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % تعریف قلم‌های فارسی و انگلیسی برای استفاده در بعضی از قسمت‌های متن
-\defpersianfont\titr[Scale=1]{XB Titre}
-\defpersianfont\nastaliq[Scale=1.5]{XB Niloofar}
+\defpersianfont\titr[Path = ./fonts/,Scale=1]{XB Titre}
+\defpersianfont\nastaliq[Path = ./fonts/,Scale=1.5]{XB Niloofar}
 %\defpersianfont\traffic[Scale=1]{B Traffic}
 %\defpersianfont\yekan[Scale=1]{B Yekan}
 %اگر فونت‌های بالا را ندارید، دو خط بالا را غیر فعال و دو خط زیر را فعال کنید
-\defpersianfont\traffic[Scale=1]{XB Roya}
-\defpersianfont\yekan[Scale=1]{XB Kayhan}
+\defpersianfont\traffic[Path = ./fonts/,Scale=1]{XB Roya}
+\defpersianfont\yekan[Path = ./fonts/,Scale=1]{XB Kayhan}
 %%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%
-\DefaultMathsDigits
+
 \newcommand{\norm}[1]{\left\lVert#1\right\rVert}
 
 
@@ -132,22 +133,19 @@
 \newpage
 \listoffigures
 
-\baselineskip=1.2cm
+\baselineskip=1cm
 \newpage 
 \include{Abstract}
 \pagenumbering{arabic}
 \include{chapter1}
 \include{chapter2}
 \include{chapter3}
-\include{chapter4}
 
-\appendix
-\include{appendix}
 %دستوراتی برای به حالت عادی در آمدن اندازه فونت‌ها و فاصله بین خطوط
 \normalsize
 %ایجاد «مراجع»
 \bibliographystyle{ieeetr-fa}
-\bibliography{HBReference}
+\bibliography{MHBReference}
 
 \include{LastPage}
 \end{document} 
