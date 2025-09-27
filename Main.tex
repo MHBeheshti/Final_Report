@@ -101,17 +101,52 @@
 %%%%%%%%%%%%%%%%%%
 \SepMark{-}
 %%%%%%%%%
- \titleformat{\chapter}[display]
-{\vspace{-3cm}\vfill\filcenter}
-{{%
-   \vspace{-3cm}\filcenter\fontsize{48pt}{48pt}\selectfont{\chaptername}
-   \fontsize{48pt}{48pt}\selectfont\thechapter%
- }%
-}
-{50pt}
-{\fontsize{30pt}{30pt}\selectfont%
-}[\vfill\clearpage]
-\titlespacing*{\chapter}{0pt}{0pt}{0pt}
+% Custom chapter command for separate title pages
+\makeatletter
+\renewcommand\chapter{%
+  \if@openright\cleardoublepage\else\clearpage\fi
+  \thispagestyle{empty}%
+  \global\@topnum\z@
+  \@afterindentfalse
+  \secdef\@chapter\@schapter}
+
+\def\@chapter[#1]#2{%
+  \ifnum \c@secnumdepth >\m@ne
+    \if@mainmatter
+      \refstepcounter{chapter}%
+      \typeout{\@chapapp\space\thechapter.}%
+      \addcontentsline{toc}{chapter}%
+                       {\protect\numberline{\thechapter}#1}%
+    \else
+      \addcontentsline{toc}{chapter}{#1}%
+    \fi
+  \else
+    \addcontentsline{toc}{chapter}{#1}%
+  \fi
+  % Title page
+  \null\vfill
+  \begin{center}
+    \fontsize{48pt}{52pt}\selectfont\bfseries\@chapapp\\[30pt]
+    \fontsize{80pt}{84pt}\selectfont\bfseries\thechapter\\[50pt]
+    \fontsize{32pt}{36pt}\selectfont\bfseries #2
+  \end{center}
+  \vfill\null
+  \clearpage
+  % Start content on next page
+  \@afterheading}
+
+\def\@schapter#1{%
+  \@mkboth{\MakeUppercase{#1}}{\MakeUppercase{#1}}%
+  \addcontentsline{toc}{chapter}{#1}%
+  % Title page for unnumbered chapters
+  \null\vfill
+  \begin{center}
+    \fontsize{32pt}{36pt}\selectfont\bfseries #1
+  \end{center}
+  \vfill\null
+  \clearpage
+  \@afterheading}
+\makeatother
 %%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%% HB %%%%%%%%%%%%%%%%
 \usepackage{bm}
